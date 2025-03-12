@@ -1,23 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface CityInputProps {
-  city: string;
-  setCity: (city: string) => void;
-  fetchWeather: () => void;
+  onCityChange: (city: string) => void;
+  onSearch: () => void;
 }
 
-const CityInput: React.FC<CityInputProps> = ({ city, setCity, fetchWeather }) => {
+const CityInput: React.FC<CityInputProps> = ({ onCityChange, onSearch }) => {
+  const [inputValue, setInputValue] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+    onCityChange(e.target.value);
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      onSearch();
+    }
+  };
+
   return (
-    <div className="p-4">
+    <div>
       <input
         type="text"
+        value={inputValue}
+        onChange={handleChange}
+        onKeyPress={handleKeyPress}
         placeholder="Digite o nome da cidade"
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
-        className="border p-2 rounded"
+        className="mt-4 p-2 border rounded"
       />
-      <button onClick={fetchWeather} className="ml-2 p-2 bg-blue-500 text-white rounded">
-        Obter Clima
+      <button
+        onClick={onSearch}
+        className="mt-2 p-2 bg-blue-500 text-white rounded"
+      >
+        Buscar Clima
       </button>
     </div>
   );
