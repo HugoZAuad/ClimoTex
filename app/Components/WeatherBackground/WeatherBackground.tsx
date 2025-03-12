@@ -15,7 +15,7 @@ interface WeatherBackgroundProps {
   }
 }
 
-const WeatherBackground: React.FC<WeatherBackgroundProps> = ({description}) => {
+const WeatherBackground: React.FC<WeatherBackgroundProps> = ({ description }) => {
   const [bgClass, setBgClass] = useState<string>('')
 
   useEffect(() => {
