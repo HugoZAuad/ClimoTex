@@ -10,6 +10,22 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+    /* CORES PRIMARIAS */
+    --color-blue-light: #87CEEB;
+    --color-green-light: #98FB98;
+  
+    /* CORES SECUNDARIAS */
+    --color-gold: #FFD700;
+    --color-orange: #FFA500;
+  
+    /* CORES NEUTRAS */
+    --color-gray-light: #D3D3D3;
+    --color-white: #FFFFFF;
+  
+    /* CORES DE ALERTA */
+    --color-orangered: #FF4500;
+    --color-dodger: #1E90FF;
 }
 
 @media (prefers-color-scheme: dark) {

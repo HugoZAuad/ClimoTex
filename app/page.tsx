@@ -4,8 +4,8 @@ import { useState } from 'react';
 import Humidity from './Components/Humidity/Humidity';
 import WindSpeed from './Components/Wind/Wind';
 import CityInput from './Components/CityInput/CityInput';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTemperatureHigh, faTint } from '@fortawesome/free-solid-svg-icons';
+import Temperature from './Components/Temperature/Temperature';
+import Condition from './Components/Condition/Condition';
 
 interface WeatherData {
   weather: { description: string }[];
@@ -47,11 +47,11 @@ export default function Home() {
         <CityInput onCityChange={setCity} onSearch={handleSearch} />
         {error && <p className="text-red-500">{error}</p>}
         {weather && (
-          <div className="bg-white bg-opacity-75 p-4 rounded shadow-md">
+          <div>
             <h2 className="text-xl font-bold">Cidade: {weather.name}</h2>
-            <p><FontAwesomeIcon icon={faTemperatureHigh} /> Temperatura: {weather.main.temp} °C</p>
-            <p><FontAwesomeIcon icon={faTint} /> Condição climática: {weather.weather[0].description}</p>
             <div>
+              <Temperature value={weather.main.temp} />
+              <Condition description={weather.weather[0].description} />
               <Humidity value={weather.main.humidity} />
               <WindSpeed value={weather.wind.speed} />
             </div>

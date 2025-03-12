@@ -27,11 +27,11 @@ const CityInput: React.FC<CityInputProps> = ({ onCityChange, onSearch }) => {
         onChange={handleChange}
         onKeyPress={handleKeyPress}
         placeholder="Digite o nome da cidade"
-        className="mt-4 p-2 border rounded"
+        className="mt-4 p-2 border-3 border-white rounded-2xl"
       />
       <button
         onClick={onSearch}
-        className="mt-2 p-2 bg-blue-500 text-white rounded"
+        className="mt-2 ml-2 p-2 bg-dodger text-white rounded cursor-pointer hover:bg-gray-light hover:text-dodger"
       >
         Buscar Clima
       </button>
