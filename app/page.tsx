@@ -1,12 +1,11 @@
 "use client";
 
 import { useState } from 'react';
-import Temperature from './Components/Temperature/Temperatura';
 import Humidity from './Components/Humidity/Humidity';
 import WindSpeed from './Components/Wind/Wind';
-import WeatherBackground from './Components/WeatherBackground/WeatherBackground';
 import CityInput from './Components/CityInput/CityInput';
-import HistoricalWeather from './Components/HistoricaWeather/HistoricaWeather';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTemperatureHigh, faTint } from '@fortawesome/free-solid-svg-icons';
 
 interface WeatherData {
   weather: { description: string }[];
@@ -42,27 +41,21 @@ export default function Home() {
 
   return (
     <div className="relative h-screen w-screen">
-      {weather && <WeatherBackground description={weather.weather[0].description} weather={weather} />}
-      <div className="absolute top-0 left-0 right-0 p-4">
-        <h1 className="text-3xl font-bold">Aplicativo de Clima</h1>
+      <div className="relative z-10 p-4">
+        <h1 className="text-3xl font-bold">ClimoTex</h1> {/* Inserir depois a foto da logo */}
+        <p>O seu aplicativo de clima em tempo real</p>
         <CityInput onCityChange={setCity} onSearch={handleSearch} />
         {error && <p className="text-red-500">{error}</p>}
         {weather && (
-          <div className="p-4 border rounded shadow-md bg-white">
-            <h2 className="text-xl font-bold">{weather.name}</h2>
-            <p>Temperatura: {weather.main.temp} °C</p>
-            <p>Condição: {weather.weather[0].description}</p>
+          <div className="bg-white bg-opacity-75 p-4 rounded shadow-md">
+            <h2 className="text-xl font-bold">Cidade: {weather.name}</h2>
+            <p><FontAwesomeIcon icon={faTemperatureHigh} /> Temperatura: {weather.main.temp} °C</p>
+            <p><FontAwesomeIcon icon={faTint} /> Condição climática: {weather.weather[0].description}</p>
+            <div>
+              <Humidity value={weather.main.humidity} />
+              <WindSpeed value={weather.wind.speed} />
+            </div>
           </div>
-        )}
-        {weather && (
-          <div className="p-4">
-            <Temperature value={weather.main.temp} />
-            <Humidity value={weather.main.humidity} />
-            <WindSpeed value={weather.wind.speed} />
-          </div>
-        )}
-        {weather && (
-          <HistoricalWeather lat={weather.coord.lat} lon={weather.coord.lon} />
         )}
       </div>
     </div>

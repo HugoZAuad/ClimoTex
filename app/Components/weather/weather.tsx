@@ -14,8 +14,8 @@ interface WeatherProps {
 
 const Weather: React.FC<WeatherProps> = ({ weather }) => {
   return (
-    <div className="p-4 border rounded shadow-md">
-      <h2 className="text-xl font-bold">{weather.name}</h2>
+    <div>
+      <h2>{weather.name}</h2>
       <p>Temperatura: {weather.main.temp} °C</p>
       <p>Condição: {weather.weather[0].description}</p>
     </div>
