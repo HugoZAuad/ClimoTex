@@ -40,32 +40,30 @@ export default function Home() {
   };
 
   return (
-    <div className="relative h-screen w-scree bg-blue-500">
-      <div className="relative z-10 p-4">
-        <h1 className="text-3xl font-bold">ClimoTex</h1> {/* Inserir depois a foto da logo */}
+    <div className=" p-4 m-2 text-background">
+        <h1 className="text-3xl font-bold ">ClimoTex</h1> {/* Inserir depois a foto da logo */}
         <p>O seu aplicativo de clima em tempo real</p>
         <CityInput onCityChange={setCity} onSearch={handleSearch} />
         {error && <p className="text-red-500">{error}</p>}
         {weather && (
           <div>
-            <h2 className="text-xl font-bold flex justify-center items-center mb-25">Cidade: {weather.name}</h2>
+            <h2 className="text-xl font-semibold flex justify-center items-center mt-15 mb-35 gap-1">Em <span className='text-dodger font-bold'>{weather.name}</span> esta com as seguintes condições climaticas:</h2>
             <div className='flex flex-row justify-around gap-1'>
-              <div className='pb-80 pt-15 pl-40 pr-40'>
+              <div className=''>
               <Temperature value={weather.main.temp} />
               </div>
-              <div className='pb-80 pt-15 pl-40 pr-40'>
+              <div className=''>
               <Condition description={weather.weather[0].description} />
               </div>
-              <div className='pb-80 pt-15 pl-40 pr-40'>
+              <div className=''>
               <Humidity value={weather.main.humidity} />
               </div>
-              <div className='pb-80 pt-15 pl-40 pr-40'>
+              <div className=''>
               <WindSpeed value={weather.wind.speed} />
               </div>
             </div>
           </div>
         )}
-      </div>
       </div>
   );
 }
