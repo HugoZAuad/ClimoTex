@@ -40,7 +40,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative h-screen w-screen">
+    <div className="relative h-screen w-scree bg-blue-500">
       <div className="relative z-10 p-4">
         <h1 className="text-3xl font-bold">ClimoTex</h1> {/* Inserir depois a foto da logo */}
         <p>O seu aplicativo de clima em tempo real</p>
@@ -48,16 +48,24 @@ export default function Home() {
         {error && <p className="text-red-500">{error}</p>}
         {weather && (
           <div>
-            <h2 className="text-xl font-bold">Cidade: {weather.name}</h2>
-            <div>
+            <h2 className="text-xl font-bold flex justify-center items-center mb-25">Cidade: {weather.name}</h2>
+            <div className='flex flex-row justify-around gap-1'>
+              <div className='pb-80 pt-15 pl-40 pr-40'>
               <Temperature value={weather.main.temp} />
+              </div>
+              <div className='pb-80 pt-15 pl-40 pr-40'>
               <Condition description={weather.weather[0].description} />
+              </div>
+              <div className='pb-80 pt-15 pl-40 pr-40'>
               <Humidity value={weather.main.humidity} />
+              </div>
+              <div className='pb-80 pt-15 pl-40 pr-40'>
               <WindSpeed value={weather.wind.speed} />
+              </div>
             </div>
           </div>
         )}
       </div>
-    </div>
+      </div>
   );
 }
