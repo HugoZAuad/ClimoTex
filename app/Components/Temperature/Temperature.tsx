@@ -32,9 +32,9 @@ const Temperature: React.FC<TemperatureProps> = ({ value }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`flex flex-col items-center gap-2 p-4 ${backgroundColor} rounded-lg shadow-md`}
+      className={`flex flex-col items-center gap-2 p-4 ${backgroundColor} rounded-lg shadow-md w-full max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg`}
     >
-      <p className="flex gap-1 justify-center items-center font-bold ">
+      <p className="flex gap-1 justify-center items-center font-bold">
         <FontAwesomeIcon icon={faTemperatureHigh} /> Temperatura: {value} °C
         {value >= 30 && <FontAwesomeIcon icon={faExclamationTriangle} className="text-gold" />}
       </p>

@@ -40,30 +40,24 @@ export default function Home() {
   };
 
   return (
-    <div className=" p-4 m-2 text-background">
-        <h1 className="text-3xl font-bold ">ClimoTex</h1> {/* Inserir depois a foto da logo */}
-        <p>O seu aplicativo de clima em tempo real</p>
-        <CityInput onCityChange={setCity} onSearch={handleSearch} />
-        {error && <p className="text-red-500">{error}</p>}
-        {weather && (
-          <div>
-            <h2 className="text-xl font-semibold flex justify-center items-center mt-15 mb-35 gap-1">Em <span className='text-dodger font-bold'>{weather.name}</span> esta com as seguintes condições climaticas:</h2>
-            <div className='flex flex-row justify-evenly gap-1'>
-              <div>
-              <Temperature value={weather.main.temp} />
-              </div>
-              <div>
-              <Condition description={weather.weather[0].description} />
-              </div>
-              <div>
-              <Humidity value={weather.main.humidity} />
-              </div>
-              <div>
-              <WindSpeed value={weather.wind.speed} />
-              </div>
-            </div>
+    <div className="p-4 m-2 text-background">
+      <h1 className="text-3xl font-bold">ClimoTex</h1> {/* Inserir depois a foto da logo */}
+      <p>O seu aplicativo de clima em tempo real</p>
+      <CityInput onCityChange={setCity} onSearch={handleSearch} />
+      {error && <p className="text-red-500">{error}</p>}
+      {weather && (
+        <div>
+          <h2 className="text-xl font-semibold flex justify-center items-center mt-15 mb-35 gap-1">
+            Em <span className='text-dodger font-bold'>{weather.name}</span> está com as seguintes condições climáticas:
+          </h2>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4'>
+            <Temperature value={weather.main.temp} />
+            <Condition description={weather.weather[0].description} />
+            <Humidity value={weather.main.humidity} />
+            <WindSpeed value={weather.wind.speed} />
           </div>
-        )}
-      </div>
+        </div>
+      )}
+    </div>
   );
 }

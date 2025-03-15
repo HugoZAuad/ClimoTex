@@ -32,7 +32,7 @@ const Condition: React.FC<ConditionProps> = ({ description }) => {
       break;
     default:
       imageSrc = cloudImage;
-      backgroundColor = 'bg-gray-500 border-4 border-gray-100';
+      backgroundColor = 'bg-gray-500 border-4 border-gray-300';
   }
 
   return (
@@ -40,7 +40,7 @@ const Condition: React.FC<ConditionProps> = ({ description }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`flex flex-col items-center gap-2 p-4 ${backgroundColor} rounded-lg shadow-md`}
+      className={`flex flex-col items-center gap-2 p-4 ${backgroundColor} rounded-lg shadow-md w-full max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg`}
     >
       <div className='flex flex-row gap-1'>
         <h1 className="font-semibold">Condição:</h1><span className='capitalize'>{description}</span>
