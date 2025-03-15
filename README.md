@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ClimoTex
 
-## Getting Started
+ClimoTex é um aplicativo de clima em tempo real desenvolvido com React.js, Next.js e Tailwind CSS.
 
-First, run the development server:
+## Índice
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Instalação](#instalação)
+- [Uso](#uso)
+- [Contribuição](#contribuição)
+- [Contato](#contato)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Sobre o Projeto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+ClimoTex é um aplicativo que fornece informações climáticas em tempo real, incluindo temperatura, umidade, velocidade do vento e condições climáticas. O projeto foi desenvolvido como parte do meu aprendizado em desenvolvimento Front-End.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tecnologias Utilizadas
 
-## Learn More
+- [React.js](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [FontAwesome](https://fontawesome.com/)
+- [OpenWeatherMap API](https://openweathermap.org/api)
 
-To learn more about Next.js, take a look at the following resources:
+## Instalação
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Para instalar e executar o projeto localmente, siga estas etapas:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/HugoZAuad/ClimoTex.git
+   ```
 
-## Deploy on Vercel
+2. Navegue até o diretório do projeto:
+   ```bash
+   cd ClimoTex
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Instale as dependências:
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Crie um arquivo `.env.local` na raiz do projeto e adicione sua chave de API do OpenWeatherMap:
+   ```env
+   NEXT_PUBLIC_OPENWEATHER_API_KEY=YOUR_API_KEY
+   ```
+
+5. Execute o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   # ou
+   yarn dev
+   ```
+
+6. Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o resultado.
+
+## Uso
+
+Digite o nome de uma cidade no campo de entrada e clique em "Buscar Clima" para obter as informações climáticas em tempo real.
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
+
+## Contato
+
+Hugo Zeymer Auad - [hugozeymer@gmail.com](mailto:hugozeymer@gmail.com)
+
+Link do Projeto: [https://github.com/HugoZAuad/ClimoTex](https://github.com/HugoZAuad/ClimoTex)
