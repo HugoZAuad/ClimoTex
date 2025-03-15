@@ -48,17 +48,17 @@ export default function Home() {
         {weather && (
           <div>
             <h2 className="text-xl font-semibold flex justify-center items-center mt-15 mb-35 gap-1">Em <span className='text-dodger font-bold'>{weather.name}</span> esta com as seguintes condições climaticas:</h2>
-            <div className='flex flex-row justify-around gap-1'>
-              <div className=''>
+            <div className='flex flex-row justify-evenly gap-1'>
+              <div>
               <Temperature value={weather.main.temp} />
               </div>
-              <div className=''>
+              <div>
               <Condition description={weather.weather[0].description} />
               </div>
-              <div className=''>
+              <div>
               <Humidity value={weather.main.humidity} />
               </div>
-              <div className=''>
+              <div>
               <WindSpeed value={weather.wind.speed} />
               </div>
             </div>
