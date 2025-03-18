@@ -10,10 +10,13 @@ ClimoTex é um aplicativo de clima em tempo real desenvolvido com React.js, Next
 - [Uso](#uso)
 - [Contribuição](#contribuição)
 - [Contato](#contato)
+- [Deploy](#deploy)
 
 ## Sobre o Projeto
 
 ClimoTex é um aplicativo que fornece informações climáticas em tempo real, incluindo temperatura, umidade, velocidade do vento e condições climáticas. O projeto foi desenvolvido como parte do meu aprendizado em desenvolvimento Front-End.
+
+O aplicativo utiliza animações suaves para transições entre as informações climáticas e é totalmente responsivo, garantindo uma boa experiência em dispositivos móveis, tablets e desktops.
 
 ## Tecnologias Utilizadas
 
@@ -21,6 +24,7 @@ ClimoTex é um aplicativo que fornece informações climáticas em tempo real, i
 - [Next.js](https://nextjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [FontAwesome](https://fontawesome.com/)
+- [Framer Motion](https://www.framer.com/motion/)
 - [OpenWeatherMap API](https://openweathermap.org/api)
 
 ## Instalação
@@ -60,7 +64,14 @@ Para instalar e executar o projeto localmente, siga estas etapas:
 
 ## Uso
 
-Digite o nome de uma cidade no campo de entrada e clique em "Buscar Clima" para obter as informações climáticas em tempo real.
+Digite o nome de uma cidade no campo de entrada e clique em "Buscar Clima" para obter as informações climáticas em tempo real. O aplicativo exibirá:
+
+- Temperatura atual com um ícone representativo.
+- Condições climáticas (ex.: céu limpo, chuva, neve).
+- Umidade relativa do ar.
+- Velocidade dos ventos, com alertas visuais para ventos fortes.
+
+As transições entre as informações são animadas para melhorar a experiência do usuário.
 
 ## Contribuição
 
@@ -71,3 +82,9 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou env
 Hugo Zeymer Auad - [hugozeymer@gmail.com](mailto:hugozeymer@gmail.com)
 
 Link do Projeto: [https://github.com/HugoZAuad/ClimoTex](https://github.com/HugoZAuad/ClimoTex)
+
+## Deploy
+
+O projeto está disponível online no seguinte link:
+
+[https://climotex.vercel.app](https://climotex.vercel.app)
